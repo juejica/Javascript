@@ -5,12 +5,12 @@ let badVibeImg
 let loseImg
 let gameOver
 
-// let w = window.innerWidth
-// let h = window.innerHeight
+let w = window.innerWidth
+let h = window.innerHeight
 
 function setup() {
-  // createCanvas(w, h)
-  createCanvas(800, 800)
+  createCanvas(w, h)
+  // createCanvas(800, 600)
 
   gameOver = false
 
