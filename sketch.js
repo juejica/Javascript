@@ -1,20 +1,25 @@
-var stretchy
-var face
-var pipes
-var badVibeImg
-var loseImg
-var gameOver
+let stretchy
+let face
+let pipes
+let badVibeImg
+let loseImg
+let gameOver
+
+// let w = window.innerWidth
+// let h = window.innerHeight
 
 function setup() {
-  createCanvas(800, 500)
+  // createCanvas(w, h)
+  createCanvas(800, 800)
+
   gameOver = false
 
-  badVibeImg = loadImage('badvibe.png')
+  badVibeImg = loadImage('images/badvibe.png')
 
-  loseImg = loadImage('lose.png')
+  loseImg = loadImage('images/lose.png')
 
-  face = loadImage('face.png')
-  face.scale = 0.5
+  face = loadImage('images/face.png')
+  face.scale = 1
 
   stretchy = createSprite(400, 200, 10, 10)
 
@@ -38,8 +43,8 @@ function draw() {
   if (gameOver == false) {
     //spawn pipes
     if (frameCount % 20 == 0) {
-      //var pipeH = random(50, 300);
-      var pipe = createSprite(random(0, width), 0)
+      //let pipeH = random(50, 300);
+      let pipe = createSprite(random(0, width), 0)
       pipe.addImage('main', badVibeImg)
       pipe.addSpeed(9, 90)
       pipes.add(pipe)
@@ -53,7 +58,7 @@ function draw() {
       gameOver = true
       console.log('lose')
 
-      for (var i = 0; i < pipes.length; i++) {
+      for (let i = 0; i < pipes.length; i++) {
         pipes[i].setSpeed(0, 0)
       }
     }
